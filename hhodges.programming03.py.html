@@ -1,52 +1,40 @@
-<html>
-<head>
-<title>hhodges.programming03.py</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-.s0 { color: #808080;}
-.s1 { color: #a9b7c6;}
-.s2 { color: #cc7832;}
-.s3 { color: #6a8759;}
-.s4 { color: #6897bb;}
-</style>
-</head>
-<body bgcolor="#2b2b2b">
-<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
-<tr><td><center>
-<font face="Arial, Helvetica" color="#000000">
-hhodges.programming03.py</font>
-</center></td></tr></table>
-<pre><span class="s0"># Hannah Hodges</span>
-<span class="s0"># CS 151, Dr Rajeev</span>
-<span class="s0"># 10/27/2021</span>
-<span class="s0"># Programming 03</span>
-<span class="s0">#</span>
-<span class="s1">function: qb rating</span>
-<span class="s1">parameters: touchdowns</span><span class="s2">, </span><span class="s1">interceptions</span><span class="s2">, </span><span class="s1">attempts</span><span class="s2">, </span><span class="s1">passing_yards</span>
-<span class="s2">return </span><span class="s1">function: qb_rating score</span>
-<span class="s1">Ask </span><span class="s2">for </span><span class="s1">input of interceptions: (</span><span class="s3">&quot;Please enter number of interceptions:&quot;</span><span class="s1">)</span>
-<span class="s0">#program will ask the user for input and run based off qb rating equation</span>
-<span class="s0">#perfect rating is qb 158.3</span>
-<span class="s1">function: quidditch</span>
-<span class="s1">parameters: goal</span><span class="s2">, </span><span class="s1">snitch</span>
-<span class="s1">Return quiditch_score</span>
-<span class="s1">Ask </span><span class="s2">for </span><span class="s1">input of </span><span class="s3">&quot;Enter goals scored&quot;</span>
-<span class="s0"># program for a goal will give the team 10 points</span>
-<span class="s0"># 30 points will be added if the team gets a snitch</span>
-<span class="s1">function: gymnast</span>
-<span class="s1">parameters: score (</span><span class="s4">0</span><span class="s1">-</span><span class="s4">10</span><span class="s1">)</span><span class="s2">, </span><span class="s1">execution </span><span class="s4">1</span><span class="s2">, </span><span class="s1">execution </span><span class="s4">2</span><span class="s2">, </span><span class="s1">excuction </span><span class="s2">, </span><span class="s1">execution </span><span class="s4">4</span><span class="s2">, </span><span class="s1">excution </span><span class="s4">5</span>
-<span class="s1">Return gymnast_total_score</span>
-<span class="s1">calculation= score (</span><span class="s4">0</span><span class="s1">-</span><span class="s4">10</span><span class="s1">) + average of executions (executions (</span><span class="s4">1</span><span class="s1">+ </span><span class="s4">2</span><span class="s1">+</span><span class="s4">3 </span><span class="s1">+</span><span class="s4">4</span><span class="s1">+</span><span class="s4">5</span><span class="s1">) // </span><span class="s4">5</span><span class="s1">)</span>
-<span class="s1">Return gymnast_score</span>
+# Hannah Hodges
+# CS 151, Dr Rajeev
+# 10/27/2021
+# Programming 03
+def main():
 
+    input("Please choose a sport:")
+    if input("football"):
+        interceptions= float(input("Enter number of interceptions:"))
+        complete= float(input("Please enter number of complete passes:"))
+        attempts= float(input("Please enter number of complete attempts:"))
+        passing= float(input("Please enter number of passing yards:"))
+        attempts= float(input("Please enter number of passing attempts:"))
+        touchdowns= float(input("Please enter number of touchdowns:"))
+        attempts= float(input("Please enter number of touchdown attempts:"))
+        football_score= float(100 * (5(complete/attempts) - 0.3) + 0.25(passing/attempts-3) + 20(touchdowns/attempts) + 2.375 - (25 * interceptions/attempts)/6)
+        if football_score == 158.3:
+            print("You have a perfect QB rating")
+        else:
+            return football_score
+    if input("quiditch"):
+        goal= input("Please enter number of goals scored:")
+        snitch= input("Please enter number of snitchs made:")
+        q_score= goal * (10)
+        if snitch == 0:
+            print ("Your score is:", q_score)
+        elif snitch > 0:
+            print ("Your score is:", q_score + 30)
 
-
-
-
-
-
-
-
-</pre>
-</body>
-</html>
+    if input("gymnastics"):
+        score= int(input ("Enter score 0-10:"))
+        execution_1 = int(input("Please enter score 1:"))
+        execution_2= int(input("Please enter score 2:"))
+        execution_3= int(input("Please enter score 3:"))
+        execution_4= int(input("Please enter score 4:"))
+        execution_5= int(input("Please enter score 5:"))
+        average_executions= ((execution_1 + execution_2+ execution_3+ execution_4+ execution_5) // 5)
+        gymnastics_score= (average_executions + score)
+        print("Your gymanst score is:")
+        return gymnastics_score
